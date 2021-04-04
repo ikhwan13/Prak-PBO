@@ -1,2 +1,2 @@
-NIM   : 123190105
+*NIM   : 123190105
 *Nama  : Ahmad Ikhwan Muzadi
