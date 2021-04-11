@@ -5,15 +5,41 @@
  */
 package tugas1;
 
+import java.util.InputMismatchException;
+import java.util.Scanner;
 /**
  *
  * @author Dell
  */
 public class Main {
     public static void main(String[] args){
-        Kubus kubus = new Kubus(4);
-        Tabung tabung = new Tabung(10,7);
-        kubus.tampilkan();
-        tabung.tampilkan();
+        
+        int sisi = 0, tinggi = 0, jari = 0;
+        Scanner input = new Scanner(System.in);
+        
+        try{
+            System.out.printf("Masukkan nilai sisi kubus : ");
+            sisi = input.nextInt();
+        }catch(InputMismatchException error){
+            System.out.println("Input yang anda masukkan bukan integer, errornya adalah " + error.getMessage());
+        }finally{
+            Kubus kubus = new Kubus(sisi);
+            kubus.tampilkan();
+        }
+        
+        try{
+            System.out.printf("Masukkan nilai jari-jari Tabung : ");
+            jari = input.nextInt();
+        }catch(InputMismatchException error){
+            System.out.println("Input yang anda masukkan bukan integer, errornya adalah " + error.getMessage());
+        }try{
+            System.out.printf("Masukkan nilai tinggi Tabung : ");
+            tinggi = input.nextInt();
+        }catch(InputMismatchException error){
+            System.out.println("Input yang anda masukkan bukan integer, errornya adalah " + error.getMessage());
+        }finally{
+            Tabung tabung = new Tabung(tinggi,jari);
+            tabung.tampilkan();
+        }
     }
 }
